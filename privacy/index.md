@@ -1,5 +1,5 @@
 ---
-title: Local Storess
+title: Privacy
 layout: default  # Optional, if using a theme
 ---
 
