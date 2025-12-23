@@ -446,11 +446,6 @@
     </div>
 
     <script>
-        // IMPORTANT: Replace this with your actual Supabase project URL
-        const SUPABASE_URL = 'YOUR_SUPABASE_URL';
-        // IMPORTANT: Replace this with your actual Supabase anon key
-        const SUPABASE_ANON_KEY = 'YOUR_SUPABASE_ANON_KEY';
-
         const form = document.getElementById('deleteForm');
         const messageBox = document.getElementById('messageBox');
         const submitBtn = document.getElementById('submitBtn');
@@ -526,11 +521,16 @@
             setLoading(true);
 
             try {
+                // IMPORTANT: Replace this with your actual Supabase project URL
+                const SUPABASE_URL = 'https://pbvpwhwarxaavwnhhpnp.supabase.co';
+                // Custom API Key for Delete Account Function
+                const DELETE_ACCOUNT_API_KEY = 'DC63NIhPN0epuvKFo6REuCVUwSCSnYUs';
+
                 const response = await fetch(`${SUPABASE_URL}/functions/v1/delete-account`, {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'x-api-key': DELETE_ACCOUNT_API_KEY,
                     },
                     body: JSON.stringify(formData),
                 });
